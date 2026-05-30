@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CineSphere - Explore the world's finest cinema. Discover top-rated movies, view Rotten Tomatoes & IMDb scores, filter by language or industry, and share your personal critic reviews.">
+  <meta name="keywords" content="movies, film recommendations, movie reviews, IMDb ratings, Rotten Tomatoes, Hollywood, Bollywood, Tollywood, Hallyu, Anime">
+  <title>CineSphere | Discover Extraordinary Cinema</title>
+
+  <!-- Google Fonts - Outfit (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Primary CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Premium Glassmorphic Header -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <!-- Branding Logo -->
+      <a href="#/" class="logo" id="nav-logo">
+        <span class="material-icons logo-icon">movie</span>
+        CineSphere
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-links">
+        <a href="#/" class="nav-item active" data-route="home">Home</a>
+        <a href="#/languages" class="nav-item" data-route="languages">Languages</a>
+        <a href="#/industries" class="nav-item" data-route="industries">Industries</a>
+        <a href="#/trending" class="nav-item" data-route="trending">Trending</a>
+      </nav>
+
+      <!-- Integrated Search & Interactive elements -->
+      <div class="search-container" id="global-search-container">
+        <span class="material-icons search-icon">search</span>
+        <input type="text" id="global-search-input" placeholder="Search movies, genres, language..." autocomplete="off">
+        <button id="clear-search-btn" class="clear-btn hidden">
+          <span class="material-icons">close</span>
+        </button>
+
+        <!-- Floating Glassmorphic Instant Results Overlay -->
+        <div id="search-results-overlay" class="search-overlay hidden">
+          <div class="search-overlay-header">Instant Results</div>
+          <div id="search-overlay-content" class="search-overlay-list"></div>
+          <div class="search-overlay-footer">
+            Press Enter for advanced search
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu (Hidden by default) -->
+  <div class="mobile-drawer" id="mobile-drawer-menu">
+    <div class="drawer-header">
+      <span class="drawer-title">CineSphere</span>
+      <button class="close-drawer-btn" id="close-drawer-btn">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#/" class="drawer-item active" data-route="home">Home</a>
+      <a href="#/languages" class="drawer-item" data-route="languages">Languages</a>
+      <a href="#/industries" class="drawer-item" data-route="industries">Industries</a>
+      <a href="#/trending" class="drawer-item" data-route="trending">Trending</a>
+    </nav>
+  </div>
+  <div class="drawer-overlay" id="mobile-drawer-overlay"></div>
+
+  <!-- Dynamic Application SPA Mount Point -->
+  <main id="app-root"></main>
+
+  <!-- Premium Cinematic Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="material-icons logo-icon">movie</span>
+          CineSphere
+        </div>
+        <p class="footer-tagline">Connecting cinephiles worldwide with legendary works of cinema. Dive into curated excellence.</p>
+        <div class="social-links">
+          <a href="#" class="social-badge" aria-label="Twitter"><span class="material-icons">alternate_email</span></a>
+          <a href="#" class="social-badge" aria-label="YouTube"><span class="material-icons">smart_display</span></a>
+          <a href="#" class="social-badge" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-column">
+          <h3 class="footer-header">Explore Categories</h3>
+          <ul class="footer-list">
+            <li><a href="#/languages">Languages</a></li>
+            <li><a href="#/industries">Film Industries</a></li>
+            <li><a href="#/trending">Trending Weekly</a></li>
+            <li><a href="#/">Featured Hits</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-header">Industries</h3>
+          <ul class="footer-list">
+            <li><a href="#/industries">Hollywood</a></li>
+            <li><a href="#/industries">Bollywood</a></li>
+            <li><a href="#/industries">Tollywood</a></li>
+            <li><a href="#/industries">Hallyu (Korean)</a></li>
+            <li><a href="#/industries">Anime</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3 class="footer-header">Stay Updated</h3>
+        <p class="newsletter-text">Join the CineSphere weekly newsletter for exclusive curations, festival summaries, and review features.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to CineSphere Newsletter!'); this.reset();">
+          <input type="email" placeholder="Your email address" required aria-label="Newsletter email input">
+          <button type="submit" class="btn btn-primary" aria-label="Subscribe">
+            <span class="material-icons">send</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2026 CineSphere Inc. Designed with premium visual aesthetics for film lovers.</p>
+      <div class="footer-policy-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Content License</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include Core Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
