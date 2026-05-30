@@ -1,0 +1,4 @@
+node_modules/
+cinesphere.db
+cinesphere.db-journal
+.env
